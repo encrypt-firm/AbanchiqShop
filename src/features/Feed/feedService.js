@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://abanchiqschoolapi.onrender.com/api/auth/adminstration/lecs';
+const API_URL = 'https://abanchiqschoolapi.onrender.com/api/auth/adminstration/shop';
 
 export const addPost = async (postData, token) => {
     try {

@@ -1,0 +1,10 @@
+.login-from-mail {
+  display: flex;
+  flex-direction: column;
+}
+.login-from-mail input {
+  padding: 1rem;
+  border: none;
+  margin: 1rem 0.2rem;
+  background: #f2f2f2;
+}

@@ -19,8 +19,10 @@ import FeedsUpdate from './Pages/CreateFeed/FeedsUpdate.js';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import Header from './Components/Header/Header.js';
-
-
+import Error from './Pages/404/Error.js'
+import Verify from './Pages/Verify/Verify.js';
+import PasswordResetByMail from './Pages/PasswordResetByMail/PasswordResetByMail.js';
+import ResetPassword from './Pages/ResetPassword/ResetPassword.js';
 function App() {
 
   const Layout = () => {
@@ -101,7 +103,31 @@ function App() {
     },
     {
       path: "/*",
-      element: <div className="Home">404</div>
+      element: <div className="err"><Error /> </div>
+    },
+    {
+      path: "/account/verify/:token",
+      element:
+        <div className="register">
+          <Verify />
+        </div>
+      ,
+    },
+    {
+      path: "/account/forgot-password",
+      element:
+        <div className="register">
+          <PasswordResetByMail />
+        </div>
+      ,
+    },
+    {
+      path: "/account/reset/:token",
+      element:
+        <div className="register">
+          <ResetPassword />
+        </div>
+      ,
     },
   ])
 

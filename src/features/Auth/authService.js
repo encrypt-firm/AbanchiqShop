@@ -1,10 +1,10 @@
 // authService.js
 import axios from 'axios';
 
-const API_URL = 'https://abanchiqschoolapi.onrender.com/api/auth/adminstration/lecs/';
-const API_URL_VERIFY = 'https://abanchiqschoolapi.onrender.com/api/auth/adminstration/lecs/verify/';
-const API_URL_RESET = 'https://abanchiqschoolapi.onrender.com/api/auth/adminstration/lecs/config/resetbymail';
-const API_URL_RESET_PASSWORD = 'https://abanchiqschoolapi.onrender.com/api/auth/adminstration/lecs/config/resetpassword';
+const API_URL = 'https://abanchiqschoolapi.onrender.com/api/auth/adminstration/shop/';
+const API_URL_VERIFY = 'https://abanchiqschoolapi.onrender.com/api/auth/adminstration/shop/verify/';
+const API_URL_RESET = 'https://abanchiqschoolapi.onrender.com/api/auth/adminstration/shop/config/resetbymail';
+const API_URL_RESET_PASSWORD = 'https://abanchiqschoolapi.onrender.com/api/auth/adminstration/shop/config/resetpassword';
 
 // Register user
 const register = async (userData) => {

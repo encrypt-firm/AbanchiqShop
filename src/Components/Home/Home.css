@@ -44,7 +44,7 @@
 
 .profile-image {
   float: left;
-  width: calc(33.333% - 1rem);
+  /* width: calc(66.333% - 1rem); */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,7 +53,10 @@
 
 .profile-image img {
   border-radius: 50%;
-  width: 300px;
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  background: rgb(47, 47, 47);
 }
 
 .profile-user-settings,
@@ -213,7 +216,11 @@
   }
 
   .profile-image img {
-    width: 7.7rem;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    background: rgb(47, 47, 47);
   }
 
   .profile-user-settings {

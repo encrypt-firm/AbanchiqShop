@@ -43,7 +43,7 @@ const Home = () => {
 
                                 <h1 className="profile-user-name">{user.name}</h1>
 
-                                <button className="btn profile-edit-btn">Position@lecturer</button>
+                                <button className="btn profile-edit-btn">Position@Shop Analyst</button>
 
                                 <button className="btn profile-settings-btn" aria-label="profile settings"><i className="fas fa-cog" aria-hidden="true"></i></button>
 
