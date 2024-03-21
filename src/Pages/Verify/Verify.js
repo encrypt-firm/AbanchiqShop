@@ -19,28 +19,33 @@ function Verify() {
     }, [dispatch, token]);
 
     useEffect(() => {
-        return () => {
-            dispatch(reset());
-        };
-    }, [dispatch]);
-
-    useEffect(() => {
         if (isError) {
             toast.error(message);
         }
 
         if (isSuccess) {
             toast.success("Your Account Has Successfully been verified");
-            setTimeout(() => navigate('/'), 4000);
+            setTimeout(() => {
+                // Clear localStorage upon successful verification
+                localStorage.removeItem('user');
+                // Redirect to login
+                navigate('/login');
+            }, 4000);
         }
     }, [isSuccess, isError, message, navigate]);
+
+    useEffect(() => {
+        return () => {
+            dispatch(reset());
+        };
+    }, [dispatch]);
 
     return (
         <div className='verify'>
             {isLoading ? <p><Spinner /> Verifying...</p> : null}
             {isSuccess && <>
                 <h4>Your Account Has Successfully been verified</h4>
-                <h4>Youll be redirected shortly</h4>
+                <h4>You'll be redirected shortly</h4>
             </>
             }
             {isError && <h4>Error in verification. Please try again.</h4>}

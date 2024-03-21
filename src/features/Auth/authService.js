@@ -13,18 +13,18 @@ const register = async (userData) => {
             'Content-Type': 'multipart/form-data',
         },
     });
-    if (response.data) {
-        localStorage.setItem('user', JSON.stringify(response.data));
-    }
+    // if (response.data) {
+    //     localStorage.setItem('user', JSON.stringify(response.data));
+    // }
     return response.data;
 };
 
 // Verify user
 const verifyUser = async (token) => {
     const response = await axios.get(`${API_URL_VERIFY}${token}`);
-    if (response.data) {
-        localStorage.setItem('user', JSON.stringify(response.data));
-    }
+    // if (response.data) {
+    //     localStorage.setItem('user', JSON.stringify(response.data));
+    // }
     return response.data;
 };
 

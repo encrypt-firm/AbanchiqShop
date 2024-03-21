@@ -106,7 +106,7 @@ function App() {
       element: <div className="err"><Error /> </div>
     },
     {
-      path: "/account/verify/:token",
+      path: "/verify/:token",
       element:
         <div className="register">
           <Verify />

@@ -23,7 +23,11 @@ const Home = () => {
     }
 
     if (!user) {
-        return null;
+        return (
+            <div>
+                <p>Please verify your account</p>
+            </div>
+        );
     }
 
     const userProfile = user?.profilePicture;
@@ -40,13 +44,15 @@ const Home = () => {
                             </div>
 
                             <div className="profile-user-settings">
-
-                                <h1 className="profile-user-name">{user.name}</h1>
-
-                                <button className="btn profile-edit-btn">Position@Shop Analyst</button>
-
-                                <button className="btn profile-settings-btn" aria-label="profile settings"><i className="fas fa-cog" aria-hidden="true"></i></button>
-
+                                {user && (
+                                    <>
+                                        <h1 className="profile-user-name">{user.name}</h1>
+                                        <button className="btn profile-edit-btn">Position@Sales</button>
+                                        <button className="btn profile-settings-btn" aria-label="profile settings">
+                                            <i className="fas fa-cog" aria-hidden="true"></i>
+                                        </button>
+                                    </>
+                                )}
                             </div>
 
                             <div className="profile-stats">
@@ -75,33 +81,22 @@ const Home = () => {
 
                 <main>
                     <div className="container">
+                        <h3>Manage Posts</h3>
+                        <p>Make sure you are verified to view, edit or upload posts</p>
                         <div className="gallery">
                             {posts.map(post => (
-                                <div className="gallery-item" tabindex="0" key={post._id}>
+                                <div className="gallery-item" tabIndex="0" key={post._id}>
                                     {post.images && post.images.length > 0 && (
                                         <img src={post.images[0].url} className="gallery-image" alt="" />
                                     )}
                                     <div className="gallery-item-info">
-                                        {/* <ul>
-                                            <li className="gallery-item-likes"><span className="visually-hidden">Edit</span>
-                                                <Link className='Link' to={`/editfeed/${post._id}`} >
-                                                    <MdOutlineEditLocationAlt />
-                                                </Link>
-                                            </li>
-                                            <li className="gallery-item-comments"><span className="visually-hidden">Delete</span>
-                                                <Link className='Link' to={`/delete/${post._id}`}>
-                                                    <MdOutlineEditLocationAlt />
-                                                </Link>
-                                            </li >
-                                        </ul> */}
+                                        {/* Your existing component content goes here */}
                                     </div>
                                 </div>
                             ))}
                         </div>
-                        {/* <!-- End of gallery --> */}
                         <div className="loader2"></div>
                     </div>
-                    {/* <!-- End of container --> */}
                 </main>
             </div>
         </>

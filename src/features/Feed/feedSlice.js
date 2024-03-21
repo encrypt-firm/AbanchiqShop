@@ -60,12 +60,12 @@ export const deleteFeedAsync = createAsyncThunk(
             await deleteFeed(id, token);
             return id;
         } catch (error) {
-            const message =
-                (error.response && error.response.data && error.response.data.message) || error.message || error.toString();
+            const message = (error.response && error.response.data && error.response.data.message) || error.message || error.toString();
             return thunkAPI.rejectWithValue(message);
         }
     }
 );
+
 
 
 
@@ -125,6 +125,7 @@ export const feedSlice = createSlice({
             .addCase(deleteFeedAsync.fulfilled, (state, action) => {
                 state.posts = state.posts.filter(post => post._id !== action.payload);
             })
+
     },
 });
 

@@ -14,6 +14,7 @@ const Products = () => {
     const dispatch = useDispatch()
 
     useEffect(() => {
+
         dispatch(fetchAllFeedsAsync())
     }, [dispatch])
 
@@ -27,7 +28,8 @@ const Products = () => {
             <div className="Products">
                 <main>
                     <div className="container">
-                        <h3>My Posts</h3>
+                        <h3>Manage Posts</h3>
+                        <p>Make sure you are verified to view, edit or upload posts</p>
                         <div className="gallery">
                             {posts.map(post => (
                                 <div className="gallery-item" tabindex="0" key={post._id}>
