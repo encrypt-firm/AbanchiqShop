@@ -17,6 +17,7 @@ function FeedsUpdate() {
         title: '',
         description: '',
         categories: '',
+        cost: '',
         images: [],
     });
     useEffect(() => {
@@ -32,6 +33,7 @@ function FeedsUpdate() {
                 title: post.title || '',
                 description: post.description || '',
                 categories: post.categories || '',
+                cost: post.cost || '',
                 images: [],
             });
         }
@@ -58,6 +60,7 @@ function FeedsUpdate() {
         formData.append('title', postData.title);
         formData.append('description', postData.description);
         formData.append('categories', postData.categories);
+        formData.append('cost', postData.cost);
         Array.from(postData.images).forEach(image => {
             formData.append('images', image);
         });
@@ -66,6 +69,7 @@ function FeedsUpdate() {
             title: '',
             description: '',
             categories: '',
+            cost: '',
             images: [],
         });
     };
@@ -104,6 +108,14 @@ function FeedsUpdate() {
                     value={postData.title}
                     onChange={handleInputChange}
                     placeholder="Title"
+                />
+                <input
+                    required
+                    type="text"
+                    name="cost"
+                    value={postData.cost}
+                    onChange={handleInputChange}
+                    placeholder="Ingridient cost"
                 />
                 <textarea
                     required

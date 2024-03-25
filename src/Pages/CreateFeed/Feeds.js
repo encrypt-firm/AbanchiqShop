@@ -16,6 +16,7 @@ function AddPostForm() {
         title: '',
         description: '',
         categories: '',
+        cost: '',
         images: [],
     });
 
@@ -42,6 +43,7 @@ function AddPostForm() {
         formData.append('title', postData.title);
         formData.append('description', postData.description);
         formData.append('categories', postData.categories);
+        formData.append('cost', postData.cost);
         Array.from(postData.images).forEach(image => {
             formData.append('images', image);
         });
@@ -50,6 +52,7 @@ function AddPostForm() {
             title: '',
             description: '',
             categories: '',
+            cost: '',
             images: [],
         });
     };
@@ -82,6 +85,14 @@ function AddPostForm() {
                     value={postData.title}
                     onChange={handleInputChange}
                     placeholder="Title"
+                />
+                <input
+                    required
+                    type="text"
+                    name="cost"
+                    value={postData.cost}
+                    onChange={handleInputChange}
+                    placeholder="Ingridient cost"
                 />
                 <textarea
                     required
